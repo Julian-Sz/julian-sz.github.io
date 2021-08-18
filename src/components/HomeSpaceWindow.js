@@ -4,6 +4,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import SpaceWindowStar from "./SpaceWindowStar";
 import SpaceWindowEarth from "./SpaceWindowEarth";
+import SpaceWindowMoon from "./SpaceWindowMoon";
 import SpaceWindowSkyBox from "./SpaceWindowSkyBox";
 
 const DisplayBox = (props) => {
@@ -39,21 +40,37 @@ const DisplayBox = (props) => {
 export default function HomeSpaceWindow() {
   const starRadius = 0.5;
   const starColor = 0xffffff;
-  const starAmount = 100;
+  const starAmount = 200;
+  const starForbiddenZone = 50;
 
   const posArr = [];
   for (let i = 0; i < starAmount; i++) {
     const [x, y, z] = Array(3)
       .fill()
-      .map(() => THREE.MathUtils.randFloatSpread(100));
-    posArr.push([x, y, z]);
+      .map(() => THREE.MathUtils.randFloatSpread(200));
+    if (
+      Math.abs(x) < starForbiddenZone &&
+      Math.abs(y) < starForbiddenZone &&
+      Math.abs(z) < starForbiddenZone
+    ) {
+      i--;
+      continue;
+    } else {
+      posArr.push([x, y, z]);
+    }
   }
   console.log(posArr);
   return (
     <div className="h-screen w-screen z-0">
-      <Canvas>
+      <Canvas
+        shadows
+        camera={{ position: [0, 8, 15], rotation: [0, 0, 0], fov: 75 }}
+      >
         <Suspense fallback={null}>
-          <SpaceWindowEarth position={[0, 0, 0]} radius={3} />
+          <SpaceWindowEarth position={[0, 0, 0]} radius={4} />
+        </Suspense>
+        <Suspense fallback={null}>
+          <SpaceWindowMoon radius={1} />
         </Suspense>
         {posArr.map((el, index) => {
           return (
