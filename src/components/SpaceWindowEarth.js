@@ -13,9 +13,9 @@ export default function SpaceWindowEarth(props) {
   const textureEarth = useLoader(TextureLoader, earthJPG);
 
   return (
-    <mesh castShadow position={props.position} ref={mesh}>
+    <mesh castShadow position={props.position} ref={mesh} s>
       <sphereBufferGeometry attach="geometry" args={[props.radius, 15, 15]} />
-      <meshBasicMaterial map={textureEarth} attach="material" />
+      <meshStandardMaterial map={textureEarth} attach="material" />
     </mesh>
   );
 }

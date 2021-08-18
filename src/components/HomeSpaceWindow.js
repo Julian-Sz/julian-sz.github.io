@@ -5,43 +5,20 @@ import { OrbitControls } from "@react-three/drei";
 import SpaceWindowStar from "./SpaceWindowStar";
 import SpaceWindowEarth from "./SpaceWindowEarth";
 import SpaceWindowMoon from "./SpaceWindowMoon";
+import SpaceWindowSun from "./SpaceWindowSun";
 import SpaceWindowSkyBox from "./SpaceWindowSkyBox";
 
-const DisplayBox = (props) => {
-  const mesh = useRef(null);
-  useFrame(() => {
-    mesh.current.rotation.x = mesh.current.rotation.y += Math.random() * 0.01;
-  });
-
-  // const [expand, setExpand] = useState(false);
-  // let scaleProps = useSpring({
-  //   scale: expand ? [1.4, 1.4, 1.4] : [1, 1, 1],
-  // });
-
-  return (
-    <mesh
-      // onClick={() => setExpand(!expand)}
-      // scale={scaleProps.scale}
-      castShadow
-      position={[...props.position]}
-      ref={mesh}
-    >
-      <boxBufferGeometry attach="geometry" args={[2, 1, 1]} />
-      <meshStandardMaterial
-        attach="material"
-        color={props.color}
-        // speed={1}
-        // factor={1}
-      />
-    </mesh>
-  );
-};
-
 export default function HomeSpaceWindow() {
+  const ram = navigator.deviceMemory;
+  let lowTier = false;
+  if (ram < 4 || ram == undefined) {
+    lowTier = true;
+  }
   const starRadius = 0.5;
   const starColor = 0xffffff;
   const starAmount = 200;
-  const starForbiddenZone = 50;
+  const starForbiddenZone = 90;
+  const starIntensity = 0.01;
 
   const posArr = [];
   for (let i = 0; i < starAmount; i++) {
@@ -59,36 +36,62 @@ export default function HomeSpaceWindow() {
       posArr.push([x, y, z]);
     }
   }
-  console.log(posArr);
   return (
     <div className="h-screen w-screen z-0">
       <Canvas
         shadows
-        camera={{ position: [0, 8, 15], rotation: [0, 0, 0], fov: 75 }}
+        colorManagement
+        camera={{
+          position: [0, 8, 15],
+          rotation: [0, 0, 0],
+          fov: 75,
+          far: 2500,
+        }}
       >
+        <ambientLight color={0xffffff} intensity={0.03} />
         <Suspense fallback={null}>
           <SpaceWindowEarth position={[0, 0, 0]} radius={4} />
         </Suspense>
         <Suspense fallback={null}>
           <SpaceWindowMoon radius={1} />
         </Suspense>
-        {posArr.map((el, index) => {
-          return (
-            <SpaceWindowStar
-              position={el}
-              key={index}
-              color={starColor}
-              radius={starRadius}
-            />
-          );
-        })}
+        {/* Relative Sun Size: 436 */}
+        <Suspense fallback={null}>
+          <SpaceWindowSun position={[-1000, -200, -2000]} radius={100} />
+        </Suspense>
+        {!lowTier &&
+          posArr.map((el, index) => {
+            return (
+              <SpaceWindowStar
+                position={el}
+                key={index}
+                color={starColor}
+                radius={starRadius}
+                intensity={starIntensity}
+              />
+            );
+          })}
         <SpaceWindowSkyBox />
         <OrbitControls />
-        <gridHelper />
+        {/* <gridHelper /> */}
       </Canvas>
     </div>
   );
 }
+
+// const DisplayBox = (props) => {
+//   const mesh = useRef(null);
+//   useFrame(() => {
+//     mesh.current.rotation.x = mesh.current.rotation.y += Math.random() * 0.01;
+//   });
+
+//   return (
+//     <mesh castShadow position={[...props.position]} ref={mesh}>
+//       <boxBufferGeometry attach="geometry" args={[2, 1, 1]} />
+//       <meshStandardMaterial attach="material" color={props.color} />
+//     </mesh>
+//   );
+// };
 
 {
   /* <ambientLight intensity={0.3} />
