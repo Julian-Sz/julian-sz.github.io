@@ -6,9 +6,9 @@ import sunJPG from "../textures/sun.jpg";
 export default function SpaceWindowSun(props) {
   const mesh = useRef(null);
 
-  // useFrame(() => {
-  //   mesh.current.rotation.y += Math.random() * 0.01;
-  // });
+  useFrame(() => {
+    mesh.current.rotation.y += 0.002;
+  });
 
   const textureSun = useLoader(TextureLoader, sunJPG);
 

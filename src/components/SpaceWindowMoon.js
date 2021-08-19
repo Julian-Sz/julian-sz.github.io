@@ -9,8 +9,7 @@ export default function SpaceWindowMoon(props) {
   const meshInside = useRef(null);
 
   useFrame(() => {
-    meshWrapper2.current.rotation.y += 0.005;
-    meshInside.current.rotation.y += 0.001;
+    meshWrapper2.current.rotation.y += 0.002;
   });
 
   const textureMoon = useLoader(TextureLoader, moonJPG);

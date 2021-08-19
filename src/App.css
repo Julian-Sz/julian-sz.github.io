@@ -5,3 +5,76 @@ body {
 .activeNavLink {
   background: #c0392b;
 }
+
+#homeFirstSection {
+  --home-first-bg: #130f40;
+  background: var(--home-first-bg);
+}
+
+#triangleContainer {
+  --triangle-height: 100px;
+  --rotate-left: 0rad;
+  --triangle-hypotenuse: 0px;
+}
+
+#homeTriangleLeft {
+  left: 0;
+  top: calc(-1 * var(--triangle-height));
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-top-width: var(--triangle-height);
+  border-top-style: solid;
+  border-top-color: transparent;
+  border-left-width: 50vw;
+  border-left-style: solid;
+  border-left-color: var(--home-first-bg);
+}
+
+#homeTriangleRight {
+  right: 0;
+  top: calc(-1 * var(--triangle-height));
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-top-width: var(--triangle-height);
+  border-top-style: solid;
+  border-top-color: transparent;
+  border-right-width: 50vw;
+  border-right-style: solid;
+  border-right-color: var(--home-first-bg);
+}
+
+#glowTriangleLeftWrapper {
+  top: calc(-1 * var(--triangle-height) + 10px);
+  width: 50%;
+  height: var(--triangle-height);
+  left: 0;
+}
+
+#glowTriangleRightWrapper {
+  top: calc(-1 * var(--triangle-height) + 10px);
+  width: 50%;
+  height: var(--triangle-height);
+  right: 0;
+}
+
+#glowTriangleLeft {
+  transform: rotate(var(--rotate-left));
+  background: red;
+  width: calc(var(--triangle-hypotenuse) * 0.98);
+  height: 2px;
+  box-shadow: 0 0 20px 14px red;
+}
+
+#glowTriangleRight {
+  transform: rotate(calc(-1 * var(--rotate-left)));
+  background: red;
+  width: calc(var(--triangle-hypotenuse) * 0.98);
+  height: 2px;
+  box-shadow: 0 0 20px 14px red;
+}
+
+#glowHider {
+  background: var(--home-first-bg);
+}

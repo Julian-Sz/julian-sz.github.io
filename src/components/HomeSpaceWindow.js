@@ -1,7 +1,8 @@
-import React, { useRef, Suspense } from "react";
+import React, { Suspense } from "react";
 import * as THREE from "three";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+// import { OrbitControls } from "@react-three/drei";
+import SpaceWindowCamera from "./SpaceWindowCamera";
 import SpaceWindowStar from "./SpaceWindowStar";
 import SpaceWindowEarth from "./SpaceWindowEarth";
 import SpaceWindowMoon from "./SpaceWindowMoon";
@@ -9,9 +10,11 @@ import SpaceWindowSun from "./SpaceWindowSun";
 import SpaceWindowSkyBox from "./SpaceWindowSkyBox";
 
 export default function HomeSpaceWindow() {
+  // useFrame(() => {});
+
   const ram = navigator.deviceMemory;
   let lowTier = false;
-  if (ram < 4 || ram == undefined) {
+  if (ram < 4 || ram === undefined) {
     lowTier = true;
   }
   const starRadius = 0.5;
@@ -37,17 +40,13 @@ export default function HomeSpaceWindow() {
     }
   }
   return (
-    <div className="h-screen w-screen z-0">
+    <div className="h-full w-full">
       <Canvas
+        resize={{ scroll: false }} // quick fix for scroll issue
         shadows
         colorManagement
-        camera={{
-          position: [0, 8, 15],
-          rotation: [0, 0, 0],
-          fov: 75,
-          far: 2500,
-        }}
       >
+        <SpaceWindowCamera />
         <ambientLight color={0xffffff} intensity={0.03} />
         <Suspense fallback={null}>
           <SpaceWindowEarth position={[0, 0, 0]} radius={4} />
@@ -72,46 +71,9 @@ export default function HomeSpaceWindow() {
             );
           })}
         <SpaceWindowSkyBox />
-        <OrbitControls />
+        {/* <OrbitControls /> */}
         {/* <gridHelper /> */}
       </Canvas>
     </div>
   );
-}
-
-// const DisplayBox = (props) => {
-//   const mesh = useRef(null);
-//   useFrame(() => {
-//     mesh.current.rotation.x = mesh.current.rotation.y += Math.random() * 0.01;
-//   });
-
-//   return (
-//     <mesh castShadow position={[...props.position]} ref={mesh}>
-//       <boxBufferGeometry attach="geometry" args={[2, 1, 1]} />
-//       <meshStandardMaterial attach="material" color={props.color} />
-//     </mesh>
-//   );
-// };
-
-{
-  /* <ambientLight intensity={0.3} />
-        <directionalLight
-          castShadow
-          position={[0, 10, 0]}
-          intensity={1.5}
-          shadow-mapSize-shadowMapWidth={1024}
-          shadow-mapSize-shadowMapHeight={1024}
-          shadow-camera-far={50}
-          shadow-camera-left={-10}
-          shadow-camera-right={10}
-          shadow-camera-top={10}
-          shadow-camera-bottom={-10}
-        /> */
-}
-{
-  /* 
-        <DisplayBox position={[0, 1, 0]} color="blue" />
-        <DisplayBox position={[-1, -1, -2]} color="red" />
-        <DisplayBox position={[2, 0, -1]} color="green" />
-        <DisplayBox position={[-2, 2, -1]} color="yellow" /> */
 }
