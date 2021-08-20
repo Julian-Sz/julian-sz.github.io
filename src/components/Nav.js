@@ -5,8 +5,8 @@ export default function Nav() {
   const NavLinkClasses =
     "p-2 border-solid border-4 rounded-md border-white hover:bg-white hover:text-black md:text-xl";
   return (
-    <div className="w-full px-5 z-50 fixed">
-      <div className="flex justify-around bg-gray-500 text-white mt-5 p-3 w-full">
+    <header className="w-full px-5 z-50 fixed">
+      <nav className="flex justify-around bg-gray-500 text-white mt-5 p-3 w-full">
         <NavLink
           exact={true}
           to="/"
@@ -29,7 +29,7 @@ export default function Nav() {
         >
           Contact
         </NavLink>
-      </div>
-    </div>
+      </nav>
+    </header>
   );
 }

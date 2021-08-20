@@ -11,10 +11,10 @@ body {
   background: var(--home-first-bg);
 }
 
-#triangleContainer {
+#Home {
   --triangle-height: 100px;
-  --rotate-left: 0rad;
   --triangle-hypotenuse: 0px;
+  --rotate-left: 0rad;
 }
 
 #homeTriangleLeft {
@@ -62,7 +62,7 @@ body {
 #glowTriangleLeft {
   transform: rotate(var(--rotate-left));
   background: red;
-  width: calc(var(--triangle-hypotenuse) * 0.98);
+  width: calc(var(--triangle-hypotenuse) * 1);
   height: 2px;
   box-shadow: 0 0 20px 14px red;
 }
@@ -70,11 +70,188 @@ body {
 #glowTriangleRight {
   transform: rotate(calc(-1 * var(--rotate-left)));
   background: red;
-  width: calc(var(--triangle-hypotenuse) * 0.98);
+  width: calc(var(--triangle-hypotenuse) * 1);
   height: 2px;
   box-shadow: 0 0 20px 14px red;
 }
 
 #glowHider {
   background: var(--home-first-bg);
+}
+
+#glowingArrowContainer {
+  top: calc(-1 * var(--triangle-height) + 60px);
+  margin: auto;
+  --glowColor: red;
+}
+
+.glowingArrow {
+  width: 100px;
+  left: -500px;
+  right: -500px;
+  margin: auto;
+}
+
+.glowingArrow:nth-of-type(3) {
+  bottom: 50px;
+}
+
+.glowingArrow:nth-of-type(2) {
+  bottom: 25px;
+}
+.glowingArrow:nth-of-type(1) {
+  bottom: 0px;
+}
+
+@media (min-width: 768px) {
+  #glowingArrowContainer {
+    top: calc(-1 * var(--triangle-height) + 20px);
+  }
+
+  .glowingArrow {
+    width: 200px;
+  }
+
+  .glowingArrow:nth-of-type(3) {
+    bottom: 100px;
+  }
+
+  .glowingArrow:nth-of-type(2) {
+    bottom: 50px;
+  }
+  .glowingArrow:nth-of-type(1) {
+    bottom: 0px;
+  }
+}
+
+.glowingArrowLeft {
+  transform: rotate(var(--rotate-left));
+  height: 0;
+  width: 100%;
+}
+
+.glowingArrowRight {
+  transform: rotate(calc(-1 * var(--rotate-left)));
+  height: 0;
+  width: 100%;
+}
+
+.glowingArrowLine {
+  --glowColor: red;
+  --alternateColor: green;
+  height: 2px;
+  width: 50%;
+  background-color: var(--glowColor);
+  box-shadow: 0 0 20px 14px var(--glowColor);
+}
+
+@keyframes changeColor {
+  0% {
+    background: var(--glowColor);
+    box-shadow: 0 0 20px 14px var(--glowColor);
+  }
+  10% {
+    background: var(--alternateColor);
+    box-shadow: 0 0 20px 14px var(--alternateColor);
+  }
+  40% {
+    background: var(--alternateColor);
+    box-shadow: 0 0 20px 14px var(--alternateColor);
+  }
+  50% {
+    background: var(--glowColor);
+    box-shadow: 0 0 20px 14px var(--glowColor);
+  }
+}
+
+.glowingArrow:nth-of-type(3) .glowingArrowLine {
+  animation-name: changeColor;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-delay: 0s;
+}
+
+.glowingArrow:nth-of-type(2) .glowingArrowLine {
+  animation-name: changeColor;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-delay: 1s;
+}
+
+.glowingArrow:nth-of-type(1) .glowingArrowLine {
+  animation-name: changeColor;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+
+#firstSection {
+  background: var(--home-first-bg);
+}
+
+#cyanBoxShadow {
+  box-shadow: inset 0 0 6px 5px cyan, 0 0 10px 5px cyan;
+}
+
+#homeTriangleLeft2 {
+  right: 50%;
+  bottom: calc(-1 * var(--triangle-height));
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-bottom-width: var(--triangle-height);
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  border-right-width: 50vw;
+  border-right-style: solid;
+  border-right-color: var(--home-first-bg);
+}
+
+#homeTriangleRight2 {
+  left: 50%;
+  bottom: calc(-1 * var(--triangle-height));
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-bottom-width: var(--triangle-height);
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
+  border-left-width: 50vw;
+  border-left-style: solid;
+  border-left-color: var(--home-first-bg);
+}
+
+#homeSkillSection {
+  padding-top: calc(1.1 * var(--triangle-height));
+  background: #1e272e;
+}
+
+#glowTriangleLeftWrapper2 {
+  bottom: calc(-1 * var(--triangle-height) + 10px);
+  width: 50%;
+  height: var(--triangle-height);
+  left: 0;
+}
+
+#glowTriangleRightWrapper2 {
+  bottom: calc(-1 * var(--triangle-height) + 10px);
+  width: 50%;
+  height: var(--triangle-height);
+  right: 0;
+}
+
+#glowTriangleLeft2 {
+  transform: rotate(var(--rotate-left));
+  background: red;
+  width: calc(var(--triangle-hypotenuse) * 1);
+  height: 2px;
+  box-shadow: 0 0 20px 14px red;
+}
+
+#glowTriangleRight2 {
+  transform: rotate(calc(-1 * var(--rotate-left)));
+  background: red;
+  width: calc(var(--triangle-hypotenuse) * 1);
+  height: 2px;
+  box-shadow: 0 0 20px 14px red;
 }
