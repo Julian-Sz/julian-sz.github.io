@@ -110,7 +110,7 @@ export default function Home() {
       </section>
       <section id="homeSkillSection" className="">
         <h1 className="text-6xl text-left ml-10 pb-5">My Skills</h1>
-        <div className="carousel grid grid-cols-3 relative">
+        <div className="carousel grid relative">
           <SkillCarousel />
         </div>
       </section>

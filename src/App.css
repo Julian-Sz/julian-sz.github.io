@@ -142,25 +142,50 @@ body {
   height: 2px;
   width: 50%;
   background-color: var(--glowColor);
-  box-shadow: 0 0 20px 14px var(--glowColor);
+  box-shadow: 0 0 14px 8px var(--glowColor);
 }
 
 @keyframes changeColor {
   0% {
     background: var(--glowColor);
-    box-shadow: 0 0 20px 14px var(--glowColor);
+    box-shadow: 0 0 14px 8px var(--glowColor);
   }
   10% {
     background: var(--alternateColor);
-    box-shadow: 0 0 20px 14px var(--alternateColor);
+    box-shadow: 0 0 14px 8px var(--alternateColor);
   }
   40% {
     background: var(--alternateColor);
-    box-shadow: 0 0 20px 14px var(--alternateColor);
+    box-shadow: 0 0 14px 8px var(--alternateColor);
   }
   50% {
     background: var(--glowColor);
+    box-shadow: 0 0 14px 8px var(--glowColor);
+  }
+}
+
+@media (min-width: 768px) {
+  .glowingArrowLine {
     box-shadow: 0 0 20px 14px var(--glowColor);
+  }
+
+  @keyframes changeColor {
+    0% {
+      background: var(--glowColor);
+      box-shadow: 0 0 20px 14px var(--glowColor);
+    }
+    10% {
+      background: var(--alternateColor);
+      box-shadow: 0 0 20px 14px var(--alternateColor);
+    }
+    40% {
+      background: var(--alternateColor);
+      box-shadow: 0 0 20px 14px var(--alternateColor);
+    }
+    50% {
+      background: var(--glowColor);
+      box-shadow: 0 0 20px 14px var(--glowColor);
+    }
   }
 }
 
@@ -257,23 +282,28 @@ body {
 }
 
 .carousel {
-  background: blue;
+  --card-width: 200px;
+  --card-height: 200px;
+  /* background: blue; */
   justify-items: center;
-  height: 2000px;
+  height: 500px;
   grid-template-areas: "A0 A1 A2";
+  grid-template-columns: 1fr var(--card-width) 1fr;
 }
 
-/* .cardWrapper:nth-child(odd) .card:hover {
-  transform: scale(0.9);
-} */
+@media (min-width: 768px) {
+  .carousel {
+    --card-width: 600px;
+    --card-height: 400px;
+  }
+}
 
 .cardWrapper {
-  height: 400px;
+  height: var(--card-height);
+  width: var(--card-width);
 }
 
 .card {
-  height: 400px;
-  width: 90%;
-  background: red;
+  width: 100%;
   border-radius: 50px;
 }
