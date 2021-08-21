@@ -80,7 +80,7 @@ body {
 }
 
 #glowingArrowContainer {
-  top: calc(-1 * var(--triangle-height) + 60px);
+  top: calc(-1 * var(--triangle-height) + 30px);
   margin: auto;
   --glowColor: red;
 }
@@ -254,4 +254,26 @@ body {
   width: calc(var(--triangle-hypotenuse) * 1);
   height: 2px;
   box-shadow: 0 0 20px 14px red;
+}
+
+.carousel {
+  background: blue;
+  justify-items: center;
+  height: 2000px;
+  grid-template-areas: "A0 A1 A2";
+}
+
+/* .cardWrapper:nth-child(odd) .card:hover {
+  transform: scale(0.9);
+} */
+
+.cardWrapper {
+  height: 400px;
+}
+
+.card {
+  height: 400px;
+  width: 90%;
+  background: red;
+  border-radius: 50px;
 }

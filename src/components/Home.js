@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import HomeSpaceWindow from "./HomeSpaceWindow";
+import SkillCarousel from "./SkillCarousel";
 
 export default function Home() {
   useEffect(() => {
@@ -108,7 +109,10 @@ export default function Home() {
         </div>
       </section>
       <section id="homeSkillSection" className="">
-        <h1 className="text-6xl text-left ml-10">My Skills</h1>
+        <h1 className="text-6xl text-left ml-10 pb-5">My Skills</h1>
+        <div className="carousel grid grid-cols-3 relative">
+          <SkillCarousel />
+        </div>
       </section>
     </main>
   );
