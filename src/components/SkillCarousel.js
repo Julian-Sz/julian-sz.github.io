@@ -1,31 +1,77 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import useWindowSize from "../Hooks/useWindowSize";
-import SkillReact from "./SkillCarousel/SkillReact";
-import SkillTailwind from "./SkillCarousel/SkillTailwind";
-import SkillBootstrap from "./SkillCarousel/SkillBootstrap";
 import SkillFramerMotion from "./SkillCarousel/SkillFramerMotion";
-import SkillReactRouter from "./SkillCarousel/SkillReactRouter";
-import SkillThree from "./SkillCarousel/SkillThree";
-import SkillPython from "./SkillCarousel/SkillPython";
+import SkillTemplate from "./SkillCarousel/SkillTemplate";
+import reactRouterLogo from "./SkillCarousel/Images/react-router-logo.png";
+import bootstrapLogo from "./SkillCarousel/Images/bootstrap-logo.svg";
+import tailwindLogo from "./SkillCarousel/Images/tailwind-logo.svg";
+import threeLogo from "./SkillCarousel/Images/three-logo.svg";
+import reactLogo from "./SkillCarousel/Images/logo512.png";
 
 export default function SkillCarousel() {
-  const borderRadius = 50;
-
-  const skillList = useMemo(
-    () => [
-      <SkillReact background={"#1289A7"} borderradius={borderRadius} />,
-      <SkillBootstrap background={"#A3CB38"} borderradius={borderRadius} />,
-      <SkillTailwind background={"#F79F1F"} borderradius={borderRadius} />,
-      <SkillFramerMotion background={"#B53471"} borderradius={borderRadius} />,
-      <SkillThree background={"#D980FA"} borderradius={borderRadius} />,
-      <SkillPython background={"#FFC312"} borderradius={borderRadius} />,
-      <SkillReactRouter background={"#EA2027"} borderradius={borderRadius} />,
-    ],
-    []
-  );
-
+  // const borderRadius = 50;
   const width = useWindowSize().width;
+
+  const mobile = width < 768 ? true : false;
+
+  const skillList = useMemo(() => {
+    const reactRouterObj = {
+      logo: reactRouterLogo,
+      title: "React Router",
+      details:
+        "With Bootstrap, you can build responsive webpages easily. It has lots of useful components, which are easy to use.",
+      background: "#EA2027",
+    };
+
+    const bootstrapObj = {
+      logo: bootstrapLogo,
+      title: "Bootstrap",
+      details:
+        "With Bootstrap, you can build responsive webpages easily. It has lots of useful components, which are easy to use.",
+      background: "#A3CB38",
+    };
+
+    const tailwindObj = {
+      logo: tailwindLogo,
+      title: "Tailwind CSS",
+      details:
+        "Tailwind CSS is a utility-based library. Instead of writing normal CSS,        Tailwind has pre-defined classes for nearly every CSS property.",
+      background: "#F79F1F",
+    };
+
+    const threeObj = {
+      logo: threeLogo,
+      title: "Three.js",
+      details:
+        "With Three.js, you can make 3D animations in the webbrowser.        React-three-fiber makes it possible to use this superpower with React. Just look at that 3D-animation up there!",
+      background: "#D980FA",
+    };
+
+    const reactObj = {
+      logo: reactLogo,
+      title: "React",
+      details:
+        "React is a javascript library that enables you to create reusable components and manage their state.",
+      background: "#1289A7",
+    };
+
+    const framerMotionObj = {
+      title: "Framer Motion",
+      details:
+        "Framer motion is a powerful animation library that works hand-in-hand with react.",
+      background: "#B53471",
+    };
+
+    return [
+      <SkillTemplate skillobj={reactObj} mobile={mobile} />,
+      <SkillTemplate skillobj={bootstrapObj} mobile={mobile} />,
+      <SkillTemplate skillobj={tailwindObj} mobile={mobile} />,
+      <SkillFramerMotion skillobj={framerMotionObj} mobile={mobile} />,
+      <SkillTemplate skillobj={threeObj} mobile={mobile} />,
+      <SkillTemplate skillobj={reactRouterObj} mobile={mobile} />,
+    ];
+  }, [mobile]);
 
   const [displayed, setDisplayed] = useState(0);
   const [displayedElements, setDisplayedElements] = useState(undefined);
