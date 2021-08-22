@@ -23,31 +23,37 @@ export default function SkillFramerMotion(props) {
   return (
     <>
       {props.mobile ? (
-        <div
-          className="card w-full h-full p-5"
-          style={{ background: props.skillobj.background }}
-        >
+        <>
           <div
-            className="bg-gray-800 w-full h-full p-4 flex flex-col justify-center rounded-2xl"
-            onClick={() => {
-              setAnimationOut(true);
-            }}
+            className="card w-full h-full p-5"
+            style={{ background: props.skillobj.background }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-              <motion.path
-                d="M0 100V0l50 50 50-50v100L75 75l-25 25-25-25z"
-                variants={icon}
-                animate={animationOut ? "hidden" : "visible"}
-                style={{ stroke: "#fff", strokeWidth: 2 }}
-                onAnimationComplete={() => {
-                  if (animationOut) {
-                    setAnimationOut(false);
-                  }
-                }}
-              />
-            </svg>
+            <div
+              className="bg-gray-800 w-full h-full p-4 flex flex-col justify-center rounded-2xl"
+              onClick={() => {
+                setAnimationOut(true);
+              }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                <motion.path
+                  d="M0 100V0l50 50 50-50v100L75 75l-25 25-25-25z"
+                  variants={icon}
+                  animate={animationOut ? "hidden" : "visible"}
+                  style={{ stroke: "#fff", strokeWidth: 2 }}
+                  onAnimationComplete={() => {
+                    if (animationOut) {
+                      setAnimationOut(false);
+                    }
+                  }}
+                />
+              </svg>
+            </div>
           </div>
-        </div>
+          <div className="absolute left-0 right-0 mx-auto -top-10 text-2xl">
+            {props.skillobj.title}
+          </div>
+          <div className="absolute top-56 px-2">{props.skillobj.details}</div>
+        </>
       ) : (
         <div
           className="card h-full grid grid-cols-3 items-center justify-items-center"

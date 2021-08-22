@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import HomeSpaceWindow from "./HomeSpaceWindow";
 import SkillCarousel from "./SkillCarousel";
+import HomeProjects from "./HomeProjects";
 
 export default function Home() {
   useEffect(() => {
@@ -40,7 +41,7 @@ export default function Home() {
       id="Home"
       className="flex flex-col justify-center align-center text-center text-white relative w-full overflow-x-hidden"
     >
-      <div className="absolute h-screen w-full top-0">
+      <div id="homeTopSection" className="absolute h-screen w-full top-0">
         <HomeSpaceWindow />
       </div>
       <section className="z-10 h-screen flex flex-col justify-center">
@@ -109,10 +110,13 @@ export default function Home() {
         </div>
       </section>
       <section id="homeSkillSection" className="">
-        <h1 className="text-6xl text-left ml-10 pb-5">My Skills</h1>
+        <h1 className="text-6xl my-5 md:text-left md:ml-10 pb-10">My Skills</h1>
         <div className="carousel grid relative">
           <SkillCarousel />
         </div>
+      </section>
+      <section id="homeProjectsSection" className="">
+        <HomeProjects />
       </section>
     </main>
   );

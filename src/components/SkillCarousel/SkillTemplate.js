@@ -4,14 +4,20 @@ export default function SkillTemplate(props) {
   return (
     <>
       {props.mobile ? (
-        <div
-          className="card w-full h-full p-5"
-          style={{ background: props.skillobj.background }}
-        >
-          <div className="bg-gray-800 w-full h-full p-2 flex flex-col justify-center rounded-2xl">
-            <img src={props.skillobj.logo} alt=""></img>
+        <>
+          <div
+            className="card w-full h-full p-5"
+            style={{ background: props.skillobj.background }}
+          >
+            <div className="bg-gray-800 w-full h-full p-2 flex flex-col justify-center rounded-2xl">
+              <img src={props.skillobj.logo} alt=""></img>
+            </div>
           </div>
-        </div>
+          <div className="absolute left-0 right-0 mx-auto -top-10 text-2xl">
+            {props.skillobj.title}
+          </div>
+          <div className="absolute top-56 px-2">{props.skillobj.details}</div>
+        </>
       ) : (
         <div
           className="card h-full grid grid-cols-3 items-center justify-items-center"

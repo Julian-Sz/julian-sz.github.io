@@ -59,7 +59,7 @@ export default function SkillCarousel() {
     const framerMotionObj = {
       title: "Framer Motion",
       details:
-        "Framer motion is a powerful animation library that works hand-in-hand with react.",
+        "Framer motion is a powerful animation library that works hand-in-hand with react. It powers this carousel and many other things on this website.",
       background: "#B53471",
     };
 
@@ -80,15 +80,18 @@ export default function SkillCarousel() {
     () => ({
       initialLeft: {
         x: width < 1024 ? -500 : -1000,
+        zIndex: 30,
         scale: 0,
       },
       initialRight: {
         x: width < 1024 ? 500 : 1000,
+        zIndex: 30,
         scale: 0,
       },
       exitLeft: {
         x: width < 1024 ? -500 : -1000,
         scale: 0,
+        zIndex: 20,
         transition: {
           duration: 1,
           ease: "easeInOut",
@@ -97,6 +100,7 @@ export default function SkillCarousel() {
       exitRight: {
         x: width < 1024 ? 500 : 1000,
         scale: 0,
+        zIndex: 20,
         transition: {
           duration: 1,
           ease: "easeInOut",
@@ -105,6 +109,7 @@ export default function SkillCarousel() {
       firstPosition: {
         x: 0,
         scale: width < 768 ? 0.6 : 0.8,
+        zIndex: 30,
         transition: {
           duration: 0.5,
         },
@@ -115,12 +120,6 @@ export default function SkillCarousel() {
       hoverMiddle: {
         scale: 1,
       },
-      // tap: {
-      //   scale: 0.7,
-      // },
-      // tapMiddle: {
-      //   scale: 1,
-      // },
       secondPosition: {
         scale: 1,
         x: 0,
@@ -128,6 +127,7 @@ export default function SkillCarousel() {
       thirdPosition: {
         x: 0,
         scale: width < 768 ? 0.6 : 0.8,
+        zIndex: 30,
         transition: {
           duration: 0.5,
         },
@@ -151,13 +151,6 @@ export default function SkillCarousel() {
               animate="firstPosition"
               exit="exitLeft"
               whileHover="hover"
-              // whileTap="tap"
-              // onTap={() => {
-              //   setDisplayed(index);
-              // }}
-              // onTapCancel={() => {
-              //   setDisplayed(index);
-              // }}
               onClick={() => {
                 setDisplayed(index);
               }}
@@ -181,7 +174,6 @@ export default function SkillCarousel() {
               variants={PositionVariants}
               animate="secondPosition"
               whileHover="hoverMiddle"
-              // whileTap="tapMiddle"
               layout
               key={index}
               className="cardWrapper flex justify-center z-40 absolute"
@@ -206,13 +198,6 @@ export default function SkillCarousel() {
               animate="thirdPosition"
               exit="exitRight"
               whileHover="hover"
-              // whileTap="tap"
-              // onTap={() => {
-              //   setDisplayed(index);
-              // }}
-              // onTapCancel={() => {
-              //   setDisplayed(index);
-              // }}
               onClick={() => {
                 setDisplayed(index);
               }}
@@ -241,8 +226,6 @@ export default function SkillCarousel() {
 
   return (
     <>
-      {/* <AnimateSharedLayout> */}
-
       {displayedElements !== undefined && (
         <AnimatePresence initial={false}>
           {displayedElements.filter((el) => el.position === 0)[0].element}
@@ -250,7 +233,6 @@ export default function SkillCarousel() {
           {displayedElements.filter((el) => el.position === 2)[0].element}
         </AnimatePresence>
       )}
-      {/* </AnimateSharedLayout> */}
     </>
   );
 }

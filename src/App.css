@@ -1,5 +1,6 @@
 body {
   background: black;
+  scroll-behavior: smooth;
 }
 
 .activeNavLink {
@@ -306,4 +307,8 @@ body {
 .card {
   width: 100%;
   border-radius: 50px;
+}
+
+#homeProjectsSection {
+  background: #1e272e;
 }
