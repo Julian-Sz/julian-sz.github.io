@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import HomeProjectTemplate from "./HomeProjectTemplate";
+import HomeProjectTemplateExpanded from "./HomeProjectTemplateExpanded";
 import { AnimateSharedLayout } from "framer-motion";
 
 export default function HomeProjects() {
@@ -66,17 +67,27 @@ export default function HomeProjects() {
     <div>
       <h1 className="text-6xl my-5 md:text-left md:ml-10 pb-5">My Projects</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <AnimateSharedLayout>
+        <AnimateSharedLayout type="crossfade">
           {projectObjArray.map((el, index) => {
-            return (
-              <HomeProjectTemplate
-                projectobj={el}
-                key={el.title}
-                expanded={expanded === index ? true : false}
-                index={index}
-                setexpanded={setExpanded}
-              />
-            );
+            if (index !== expanded) {
+              return (
+                <HomeProjectTemplate
+                  projectobj={el}
+                  key={el.title}
+                  index={index}
+                  setexpanded={setExpanded}
+                />
+              );
+            } else {
+              return (
+                <HomeProjectTemplateExpanded
+                  projectobj={el}
+                  key={el.title}
+                  index={index}
+                  setexpanded={setExpanded}
+                />
+              );
+            }
           })}
         </AnimateSharedLayout>
       </div>

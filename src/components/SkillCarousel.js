@@ -28,8 +28,8 @@ export default function SkillCarousel() {
       logo: bootstrapLogo,
       title: "Bootstrap",
       details:
-        "With Bootstrap, you can build responsive webpages easily. It has lots of useful components, which are easy to use.",
-      background: "#A3CB38",
+        "With Bootstrap you can easily create responsive websites. It has many useful pre-built components that are easy to use.",
+      background: "#8e44ad",
     };
 
     const tailwindObj = {
@@ -37,7 +37,7 @@ export default function SkillCarousel() {
       title: "Tailwind CSS",
       details:
         "Tailwind CSS is a utility-based library. Instead of writing normal CSS,        Tailwind has pre-defined classes for nearly every CSS property.",
-      background: "#F79F1F",
+      background: "#009432",
     };
 
     const threeObj = {
@@ -45,7 +45,7 @@ export default function SkillCarousel() {
       title: "Three.js",
       details:
         "With Three.js, you can make 3D animations in the webbrowser.        React-three-fiber makes it possible to use this superpower with React. Just look at that 3D-animation up there!",
-      background: "#D980FA",
+      background: "#0652DD",
     };
 
     const reactObj = {
