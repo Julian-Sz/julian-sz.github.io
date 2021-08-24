@@ -1,10 +1,19 @@
-body {
-  background: black;
+html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: black;
+}
+
+.navLink {
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #0e49b5,
+    0 0 0.8rem #0e49b5, 0 0 2.8rem #0e49b5, inset 0 0 1.3rem #0e49b5;
+}
+
 .activeNavLink {
-  background: #c0392b;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
 }
 
 #homeFirstSection {
