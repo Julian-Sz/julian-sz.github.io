@@ -109,13 +109,13 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section id="homeSkillSection" className="">
+      <section id="homeSkillSection" className="p-5">
         <h1 className="text-6xl my-5 md:text-left md:ml-10 pb-10">My Skills</h1>
         <div className="carousel grid relative">
           <SkillCarousel />
         </div>
       </section>
-      <section id="homeProjectsSection" className="">
+      <section id="homeProjectsSection" className="p-5">
         <HomeProjects />
       </section>
     </main>
