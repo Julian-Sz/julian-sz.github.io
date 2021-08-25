@@ -58,9 +58,9 @@ export default function Home() {
   return (
     <motion.main
       variants={homeVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
+      // initial="initial"
+      // animate="animate"
+      // exit="exit"
       id="Home"
       className="flex flex-col justify-center align-center text-center text-white relative w-full overflow-x-hidden"
     >

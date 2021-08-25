@@ -10,6 +10,7 @@ export default function HomeProjectTemplateExpanded(props) {
         style={{ background: "rgba(0, 0, 0, 0.5)" }}
         onClick={() => {
           props.setexpanded(undefined);
+          props.setanimatingout(props.index);
         }}
       >
         <motion.div
@@ -21,18 +22,21 @@ export default function HomeProjectTemplateExpanded(props) {
             e.stopPropagation();
           }}
           layoutId={`Container${props.projectobj.title}`}
-          initial={{ borderRadius: "2rem" }}
-          // animate={{ borderRadius: "2rem" }}
-          className="flex flex-col md:flex-row overflow-hidden"
+          className="flex flex-col md:flex-row overflow-hidden items-center relative"
+          animate={{ borderRadius: "20px", zIndex: 100 }}
         >
           <motion.div
             layoutId={`Background${props.projectobj.title}`}
             style={{ background: props.projectobj.background }}
-            className="flex-1"
+            className="flex-1 h-full z-40"
+          ></motion.div>
+          <motion.div
+            layoutId={`RightContainerBackground${props.projectobj.title}`}
+            className="absolute w-6/12 right-0 top-0 bottom-0 bg-gray-400"
           ></motion.div>
           <motion.div
             layoutId={`RightContainer${props.projectobj.title}`}
-            className="flex-1 flex flex-col justify-center bg-gray-400"
+            className="flex-1 flex flex-col justify-center z-50 h-full items-center"
           >
             <motion.h1
               layoutId={`Title${props.projectobj.title}`}

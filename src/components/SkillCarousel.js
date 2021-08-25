@@ -19,8 +19,7 @@ export default function SkillCarousel() {
     const reactRouterObj = {
       logo: reactRouterLogo,
       title: "React Router",
-      details:
-        "With Bootstrap, you can build responsive webpages easily. It has lots of useful components, which are easy to use.",
+      details: "Add details here",
       background: "#EA2027",
     };
 
@@ -28,7 +27,7 @@ export default function SkillCarousel() {
       logo: bootstrapLogo,
       title: "Bootstrap",
       details:
-        "With Bootstrap you can easily create responsive websites. It has many useful pre-built components that are easy to use.",
+        "With Bootstrap, you can easily create responsive websites. It has many useful pre-built components that are easy to use.",
       background: "#8e44ad",
     };
 

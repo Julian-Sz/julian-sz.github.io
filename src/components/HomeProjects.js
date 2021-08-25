@@ -62,6 +62,7 @@ export default function HomeProjects() {
   ];
 
   const [expanded, setExpanded] = useState(undefined);
+  const [isAnimatingOut, setAnimatingOut] = useState();
 
   return (
     <div>
@@ -76,6 +77,8 @@ export default function HomeProjects() {
                   key={el.title}
                   index={index}
                   setexpanded={setExpanded}
+                  isanimatingout={isAnimatingOut === index}
+                  setanimatingout={setAnimatingOut}
                 />
               );
             } else {
@@ -85,6 +88,7 @@ export default function HomeProjects() {
                   key={el.title}
                   index={index}
                   setexpanded={setExpanded}
+                  setanimatingout={setAnimatingOut}
                 />
               );
             }
