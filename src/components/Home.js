@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import HomeSpaceWindow from "./HomeSpaceWindow";
 import SkillCarousel from "./SkillCarousel";
 import HomeProjects from "./HomeProjects";
@@ -28,6 +28,7 @@ export default function Home() {
       }, 100);
     };
     window.addEventListener("resize", resizeFunction);
+
     return () => {
       window.removeEventListener("resize", resizeFunction);
     };
@@ -55,14 +56,21 @@ export default function Home() {
       },
     },
   };
+
+  const main = useRef(null);
+
   return (
     <motion.main
       variants={homeVariants}
-      // initial="initial"
-      // animate="animate"
-      // exit="exit"
+      initial="initial"
+      animate="animate"
+      exit="exit"
       id="Home"
       className="flex flex-col justify-center align-center text-center text-white relative w-full overflow-x-hidden"
+      ref={main}
+      onAnimationComplete={() => {
+        main.current.style.transform = "";
+      }}
     >
       <div id="homeTopSection" className="absolute h-screen w-full top-0">
         <HomeSpaceWindow />
