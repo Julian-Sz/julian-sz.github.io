@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import HomeSpaceWindow from "./HomeSpaceWindow";
 import SkillCarousel from "./SkillCarousel";
 import HomeProjects from "./HomeProjects";
+import HomeFirstSection from "./HomeFirstSection";
+import { motion } from "framer-motion";
 
 export default function Home() {
   useEffect(() => {
@@ -36,16 +38,39 @@ export default function Home() {
     window.dispatchEvent(event);
   });
 
+  const homeVariants = {
+    initial: {
+      x: "-150vw",
+    },
+    animate: {
+      x: 0,
+      transition: {
+        duration: 2,
+      },
+    },
+    exit: {
+      x: "-150vw",
+      transition: {
+        duration: 2,
+      },
+    },
+  };
   return (
-    <main
+    <motion.main
+      variants={homeVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
       id="Home"
       className="flex flex-col justify-center align-center text-center text-white relative w-full overflow-x-hidden"
     >
       <div id="homeTopSection" className="absolute h-screen w-full top-0">
         <HomeSpaceWindow />
       </div>
-      <section className="z-10 h-screen flex flex-col justify-center">
-        <h1 className="text-6xl mb-5">Hi, I am Julian Szigethy</h1>
+      <section className="z-10 h-screen flex flex-col justify-center font-bold">
+        <h1 id="homeHeading" className="text-6xl mb-5">
+          Hi, I am Julian Szigethy
+        </h1>
         <h2 className="text-2xl">And I'm learning web development!</h2>
       </section>
       <section id="homeFirstSection" className="z-20 w-full">
@@ -82,14 +107,7 @@ export default function Home() {
         </div>
         <div id="glowHider" className="w-full h-20 z-20 absolute"></div>
         <section id="firstSection" className="flex flex-col z-20 relative">
-          <h1 className="z-40 mt-5 text-3xl relative">Who am I?</h1>
-          <div className="z-40 relative w-11/12 md:w-6/12 mb-32 self-center mt-10">
-            <p id="cyanBoxShadow" className="p-5 rounded-2xl">
-              Currently, I am attending HTL Waidhofen in the department of
-              mechanical engineering. In my free time, I am coding and designing
-              websites and web apps, like this one.
-            </p>
-          </div>
+          <HomeFirstSection />
         </section>
         <div className="triangleContainer w-full relative h-0 z-10">
           <div id="homeTriangleLeft2" className="absolute z-30"></div>
@@ -118,6 +136,6 @@ export default function Home() {
       <section id="homeProjectsSection" className="p-5">
         <HomeProjects />
       </section>
-    </main>
+    </motion.main>
   );
 }
