@@ -27,16 +27,28 @@ export default function HomeProjectTemplateExpanded(props) {
       borderRadius: "20px",
     },
   };
+
+  const backgroundVariants = {
+    initial: { backgroundColor: "rgba(0, 0, 0, 0)" },
+    animate: {
+      backgroundColor: "rgba(0, 0, 0, 0.5)",
+    },
+    exit: {
+      backgroundColor: "rgba(0, 0, 0, 0)",
+    },
+  };
   return (
     <>
-      {/* <div className="h-56"></div> */}
       <motion.div
         className="w-full fixed top-0 left-0 right-0 bottom-0 z-50 flex justify-center items-center"
-        style={{ background: "rgba(0, 0, 0, 0.5)" }}
         onClick={() => {
           props.setexpanded(undefined);
           props.setanimatingout(props.index);
         }}
+        variants={backgroundVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
       >
         <motion.div
           style={{
