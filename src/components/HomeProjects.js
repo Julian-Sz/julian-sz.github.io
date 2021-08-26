@@ -79,32 +79,31 @@ export default function HomeProjects() {
       <h1 className="text-6xl my-5 md:text-left md:ml-10 pb-5">My Projects</h1>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         <AnimateSharedLayout type="crossfade">
-          <AnimatePresence>
-            {projectObjArray.map((el, index) => {
-              if (index !== expanded) {
-                return (
-                  <HomeProjectTemplate
-                    projectobj={el}
-                    key={el.title}
-                    index={index}
-                    setexpanded={setExpanded}
-                    isanimatingout={isAnimatingOut === index}
-                    setanimatingout={setAnimatingOut}
-                  />
-                );
-              } else {
-                return (
-                  <HomeProjectTemplateExpanded
-                    projectobj={el}
-                    key={el.title}
-                    index={index}
-                    setexpanded={setExpanded}
-                    setanimatingout={setAnimatingOut}
-                  />
-                );
-              }
-            })}
-          </AnimatePresence>
+          {projectObjArray.map((el, index) => {
+            return (
+              <div key={el.title}>
+                <HomeProjectTemplate
+                  projectobj={el}
+                  key={el.title}
+                  index={index}
+                  setexpanded={setExpanded}
+                  isanimatingout={isAnimatingOut === index}
+                  setanimatingout={setAnimatingOut}
+                />
+                <AnimatePresence>
+                  {index === expanded && (
+                    <HomeProjectTemplateExpanded
+                      projectobj={el}
+                      key={el.title}
+                      index={index}
+                      setexpanded={setExpanded}
+                      setanimatingout={setAnimatingOut}
+                    />
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
         </AnimateSharedLayout>
       </div>
     </div>

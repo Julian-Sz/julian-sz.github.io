@@ -5,12 +5,18 @@ export default function HomeProjectTemplateExpanded(props) {
   const detailsVariants = {
     initial: {
       opacity: 0,
+      scale: 0.4,
     },
     animate: {
       opacity: 1,
+      scale: 1,
+      transition: {
+        delay: 0.4,
+      },
     },
     exit: {
       opacity: 0,
+      scale: 0.4,
     },
   };
   const containerVariants = {
@@ -23,7 +29,7 @@ export default function HomeProjectTemplateExpanded(props) {
   };
   return (
     <>
-      <div className="h-56"></div>
+      {/* <div className="h-56"></div> */}
       <motion.div
         className="w-full fixed top-0 left-0 right-0 bottom-0 z-50 flex justify-center items-center"
         style={{ background: "rgba(0, 0, 0, 0.5)" }}
@@ -72,10 +78,10 @@ export default function HomeProjectTemplateExpanded(props) {
               {props.projectobj.description}
             </motion.p>
             <motion.p
-            // variants={detailsVariants}
-            // initial="initial"
-            // animate="animate"
-            // exit="exit"
+              variants={detailsVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
             >
               {props.projectobj.details}
             </motion.p>

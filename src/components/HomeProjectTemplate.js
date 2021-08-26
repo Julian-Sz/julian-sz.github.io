@@ -47,7 +47,10 @@ export default function HomeProjectTemplate(props) {
         style={{ background: props.projectobj.background }}
         className="absolute left-0 right-0 top-0 bottom-0 z-20"
       ></motion.div>
-      <motion.div className="relative flex flex-col items-center z-30">
+      <motion.div
+        layoutId={`RightContainer${props.projectobj.title}`}
+        className="relative flex flex-col items-center z-30"
+      >
         <motion.h1
           layoutId={`Title${props.projectobj.title}`}
           className="text-2xl"
@@ -64,17 +67,7 @@ export default function HomeProjectTemplate(props) {
       <motion.div
         layoutId={`RightContainerBackground${props.projectobj.title}`}
         className="w-full h-full bg-gray-400 absolute flex flex-col justify-center"
-      >
-        {/* <motion.p
-          // variants={detailsVariants}
-          // initial="initial"
-          // animate="animate"
-          layoutId={`Details${props.projectobj.title}`}
-          className=""
-        >
-          {props.projectobj.details}
-        </motion.p> */}
-      </motion.div>
+      ></motion.div>
     </motion.div>
   );
 }
