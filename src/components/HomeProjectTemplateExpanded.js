@@ -87,7 +87,7 @@ export default function HomeProjectTemplateExpanded(props) {
           </motion.div>
           <motion.div
             layoutId={`RightContainer${props.projectobj.title}`}
-            className="absolute right-0 bottom-0 md:w-6/12 flex flex-col justify-center md:justify-start z-40 h-3/6 md:h-full items-center md:items-start md:text-left px-2 md:px-5 overflow-y-scroll md:overflow-y-hidden py-5"
+            className="absolute right-0 bottom-0 md:w-6/12 flex flex-col justify-start z-40 h-3/6 md:h-full items-center md:items-start md:text-left px-2 md:px-5 overflow-y-scroll md:overflow-y-hidden py-5"
           >
             <motion.h1
               layoutId={`Title${props.projectobj.title}`}
@@ -95,10 +95,9 @@ export default function HomeProjectTemplateExpanded(props) {
             >
               {props.projectobj.title}
             </motion.h1>
-
             <motion.p
               layoutId={`Description${props.projectobj.title}`}
-              className="text-xl mt-5"
+              className="md:text-xl mt-5"
             >
               {props.projectobj.description}
             </motion.p>
@@ -107,7 +106,7 @@ export default function HomeProjectTemplateExpanded(props) {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="md:mt-20 text-xl"
+              className="mt-5 md:mt-20 md:text-xl"
             >
               {props.projectobj.details}
             </motion.p>
@@ -116,7 +115,7 @@ export default function HomeProjectTemplateExpanded(props) {
               initial="initial"
               animate="animate"
               exit="exit"
-              className="flex flex-col pl-5 md:pb-20 mt-auto text-3xl"
+              className="flex flex-col pl-5 md:pb-20 mt-auto text-xl md:text-3xl"
             >
               <a
                 href={props.projectobj.link}
