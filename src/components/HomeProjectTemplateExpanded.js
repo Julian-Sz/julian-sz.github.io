@@ -43,6 +43,7 @@ export default function HomeProjectTemplateExpanded(props) {
   return (
     <>
       <motion.div
+        id="expandedProjectCard"
         className="w-full fixed top-0 left-0 right-0 bottom-0 z-50 flex justify-center items-center"
         onClick={() => {
           props.setexpanded(undefined);
@@ -64,7 +65,7 @@ export default function HomeProjectTemplateExpanded(props) {
             e.stopPropagation();
           }}
           layoutId={`Container${props.projectobj.title}`}
-          className="flex flex-col md:flex-row overflow-hidden justify-end relative"
+          className="overflow-hidden relative"
           variants={containerVariants}
           initial="initial"
           animate="animate"
@@ -86,17 +87,18 @@ export default function HomeProjectTemplateExpanded(props) {
           </motion.div>
           <motion.div
             layoutId={`RightContainer${props.projectobj.title}`}
-            className="flex flex-col md:w-6/12 justify-center z-50 h-3/6 md:h-full items-center px-2 md:px-0"
+            className="absolute right-0 bottom-0 md:w-6/12 flex flex-col justify-center md:justify-start z-40 h-3/6 md:h-full items-center md:items-start md:text-left px-2 md:px-5 overflow-y-scroll md:overflow-y-hidden py-5"
           >
             <motion.h1
               layoutId={`Title${props.projectobj.title}`}
-              className="text-2xl"
+              className="text-2xl md:text-4xl mt-5"
             >
               {props.projectobj.title}
             </motion.h1>
+
             <motion.p
               layoutId={`Description${props.projectobj.title}`}
-              className="text-1xl"
+              className="text-xl mt-5"
             >
               {props.projectobj.description}
             </motion.p>
@@ -105,10 +107,68 @@ export default function HomeProjectTemplateExpanded(props) {
               initial="initial"
               animate="animate"
               exit="exit"
+              className="md:mt-20 text-xl"
             >
               {props.projectobj.details}
             </motion.p>
+            <motion.div
+              variants={detailsVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className="flex flex-col pl-5 md:pb-20 mt-auto text-3xl"
+            >
+              <a
+                href={props.projectobj.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-400 flex items-end"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  className="h-8 pr-5"
+                >
+                  <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z" />
+                  <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z" />
+                </svg>
+                <span>Visit the website</span>
+              </a>
+              <a
+                href={props.projectobj.codelink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-400 flex items-end"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 16 16"
+                  className="h-8 pr-5"
+                >
+                  <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z" />
+                  <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z" />
+                </svg>
+                <span>View the code</span>
+              </a>
+            </motion.div>
           </motion.div>
+          <motion.svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor"
+            viewBox="0 0 16 16"
+            style={{ backgroundColor: "#130f40" }}
+            className="absolute top-5 right-5 h-10 cursor-pointer hover:text-gray-400 z-50 md:bg-transparent rounded-full"
+            exit={{ scale: 0 }}
+            onClick={() => {
+              props.setexpanded(undefined);
+              props.setanimatingout(props.index);
+            }}
+          >
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+          </motion.svg>
         </motion.div>
       </motion.div>
     </>

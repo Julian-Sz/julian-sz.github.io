@@ -371,3 +371,11 @@ body {
 #homeProjectsSection {
   background: #1e272e;
 }
+
+#expandedCard * {
+  will-change: transform;
+}
+
+.closedProjectCard * {
+  will-change: transform;
+}

@@ -21,7 +21,7 @@ export default function HomeProjectTemplate(props) {
 
   return (
     <motion.div
-      className="w-full h-64 flex flex-col justify-center items-center relative overflow-hidden cursor-pointer"
+      className="closedProjectCard w-full h-64 flex flex-col justify-center items-center relative overflow-hidden cursor-pointer"
       style={{ zIndex: zIndex, background: "#130f40" }}
       onClick={() => {
         props.setexpanded(props.index);
