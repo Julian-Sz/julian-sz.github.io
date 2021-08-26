@@ -58,12 +58,13 @@ export default function HomeProjectTemplateExpanded(props) {
             width: "80vw",
             maxWidth: "1600px",
             height: width < 768 ? "80vh" : "50vh",
+            background: "#130f40",
           }}
           onClick={(e) => {
             e.stopPropagation();
           }}
           layoutId={`Container${props.projectobj.title}`}
-          className="flex flex-col md:flex-row overflow-hidden justify-end relative bg-blue-500"
+          className="flex flex-col md:flex-row overflow-hidden justify-end relative"
           variants={containerVariants}
           initial="initial"
           animate="animate"

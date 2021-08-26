@@ -9,6 +9,9 @@ export default function HomeProjectTemplate(props) {
     animate: {
       borderRadius: "20px",
     },
+    hover: {
+      y: -10,
+    },
   };
 
   let zIndex = 10;
@@ -18,8 +21,8 @@ export default function HomeProjectTemplate(props) {
 
   return (
     <motion.div
-      className="w-full h-64 flex flex-col justify-center items-center relative overflow-hidden bg-blue-500 cursor-pointer"
-      style={{ zIndex: zIndex }}
+      className="w-full h-64 flex flex-col justify-center items-center relative overflow-hidden cursor-pointer"
+      style={{ zIndex: zIndex, background: "#130f40" }}
       onClick={() => {
         props.setexpanded(props.index);
       }}
@@ -32,6 +35,7 @@ export default function HomeProjectTemplate(props) {
       variants={containerVariants}
       initial="initial"
       animate="animate"
+      whileHover="hover"
     >
       <motion.div
         layoutId={`BackgroundContainer${props.projectobj.title}`}
