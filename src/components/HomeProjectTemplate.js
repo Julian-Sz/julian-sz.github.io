@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function HomeProjectTemplate(props) {
   const containerVariants = {
@@ -20,7 +20,7 @@ export default function HomeProjectTemplate(props) {
   }
 
   return (
-    <motion.div
+    <m.div
       className="closedProjectCard w-full h-64 flex flex-col justify-center items-center relative overflow-hidden cursor-pointer"
       style={{ zIndex: zIndex, background: "#130f40" }}
       onClick={() => {
@@ -37,42 +37,39 @@ export default function HomeProjectTemplate(props) {
       animate="animate"
       whileHover="hover"
     >
-      <motion.div
+      <m.div
         layoutId={`BackgroundContainer${props.projectobj.title}`}
         className="absolute left-0 right-0 bottom-0 h-full z-20 overflow-hidden"
       >
-        <motion.div
+        <m.div
           layoutId={`BackgroundInnerContainer${props.projectobj.title}`}
           className="absolute -right-full -left-full top-0 bottom-0"
         >
-          <motion.img
+          <m.img
             layoutId={`BackgroundImage${props.projectobj.title}`}
             src={props.projectobj.background}
             className="h-full mx-auto"
-          ></motion.img>
-        </motion.div>
-      </motion.div>
-      <motion.div
+          ></m.img>
+        </m.div>
+      </m.div>
+      <m.div
         layoutId={`RightContainer${props.projectobj.title}`}
         className="relative flex flex-col items-center z-40 p-5"
       >
-        <motion.h1
-          layoutId={`Title${props.projectobj.title}`}
-          className="text-2xl"
-        >
+        <m.h1 layoutId={`Title${props.projectobj.title}`} className="text-2xl">
           {props.projectobj.title}
-        </motion.h1>
-        <motion.p
+        </m.h1>
+        <m.p
           layoutId={`Description${props.projectobj.title}`}
           className="text-1xl"
         >
           {props.projectobj.description}
-        </motion.p>
-      </motion.div>
+        </m.p>
+      </m.div>
       <div
         style={{ background: "rgba(0,0,0,0.5)" }}
         className="w-full h-full absolute top-0 left-0 z-30"
       ></div>
-    </motion.div>
+    </m.div>
   );
 }

@@ -3,7 +3,7 @@ import HomeSpaceWindow from "./HomeSpaceWindow";
 import SkillCarousel from "./SkillCarousel";
 import HomeProjects from "./HomeProjects";
 import HomeFirstSection from "./HomeFirstSection";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function Home() {
   useEffect(() => {
@@ -60,7 +60,7 @@ export default function Home() {
   const main = useRef(null);
 
   return (
-    <motion.main
+    <m.main
       variants={homeVariants}
       initial="initial"
       animate="animate"
@@ -144,6 +144,6 @@ export default function Home() {
       <section id="homeProjectsSection" className="p-5">
         <HomeProjects />
       </section>
-    </motion.main>
+    </m.main>
   );
 }

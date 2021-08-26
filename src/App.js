@@ -4,14 +4,17 @@ import Home from "./components/Home.js";
 import Nav from "./components/Nav.js";
 import Contact from "./components/Contact.js";
 import "./App.css";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, LazyMotion } from "framer-motion";
+
+const loadFeatures = () =>
+  import("./framer-motion-features.js").then((res) => res.default);
 
 function App() {
   const location = useLocation();
 
   return (
     <div className="App">
-      <div>
+      <LazyMotion features={loadFeatures} strict>
         <Nav />
         <AnimatePresence exitBeforeEnter initial={false}>
           <Switch location={location} key={location.pathname}>
@@ -23,7 +26,7 @@ function App() {
             </Route>
           </Switch>
         </AnimatePresence>
-      </div>
+      </LazyMotion>
     </div>
   );
 }

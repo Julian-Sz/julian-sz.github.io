@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import useWindowSize from "../Hooks/useWindowSize.js";
 
 export default function HomeProjectTemplateExpanded(props) {
@@ -42,7 +42,7 @@ export default function HomeProjectTemplateExpanded(props) {
   const { width } = useWindowSize();
   return (
     <>
-      <motion.div
+      <m.div
         id="expandedProjectCard"
         className="w-full fixed top-0 left-0 right-0 bottom-0 z-50 flex justify-center items-center"
         onClick={() => {
@@ -54,7 +54,7 @@ export default function HomeProjectTemplateExpanded(props) {
         animate="animate"
         exit="exit"
       >
-        <motion.div
+        <m.div
           style={{
             width: "80vw",
             maxWidth: "1600px",
@@ -70,38 +70,38 @@ export default function HomeProjectTemplateExpanded(props) {
           initial="initial"
           animate="animate"
         >
-          <motion.div
+          <m.div
             layoutId={`BackgroundContainer${props.projectobj.title}`}
             className="absolute left-0 top-0 flex-1 w-full h-3/6 md:w-6/12 md:h-full z-40 overflow-hidden"
           >
-            <motion.div
+            <m.div
               layoutId={`BackgroundInnerContainer${props.projectobj.title}`}
               className="absolute -right-full -left-full top-0 bottom-0"
             >
-              <motion.img
+              <m.img
                 layoutId={`BackgroundImage${props.projectobj.title}`}
                 src={props.projectobj.background}
                 className="h-full mx-auto"
-              ></motion.img>
-            </motion.div>
-          </motion.div>
-          <motion.div
+              ></m.img>
+            </m.div>
+          </m.div>
+          <m.div
             layoutId={`RightContainer${props.projectobj.title}`}
             className="absolute right-0 bottom-0 md:w-6/12 flex flex-col justify-start z-40 h-3/6 md:h-full items-center md:items-start md:text-left px-2 md:px-5 overflow-y-scroll md:overflow-y-hidden py-5"
           >
-            <motion.h1
+            <m.h1
               layoutId={`Title${props.projectobj.title}`}
               className="text-2xl md:text-4xl mt-5"
             >
               {props.projectobj.title}
-            </motion.h1>
-            <motion.p
+            </m.h1>
+            <m.p
               layoutId={`Description${props.projectobj.title}`}
               className="md:text-xl mt-5"
             >
               {props.projectobj.description}
-            </motion.p>
-            <motion.p
+            </m.p>
+            <m.p
               variants={detailsVariants}
               initial="initial"
               animate="animate"
@@ -109,8 +109,8 @@ export default function HomeProjectTemplateExpanded(props) {
               className="mt-5 md:mt-20 md:text-xl"
             >
               {props.projectobj.details}
-            </motion.p>
-            <motion.div
+            </m.p>
+            <m.div
               variants={detailsVariants}
               initial="initial"
               animate="animate"
@@ -151,9 +151,9 @@ export default function HomeProjectTemplateExpanded(props) {
                 </svg>
                 <span>View the code</span>
               </a>
-            </motion.div>
-          </motion.div>
-          <motion.svg
+            </m.div>
+          </m.div>
+          <m.svg
             xmlns="http://www.w3.org/2000/svg"
             fill="currentColor"
             viewBox="0 0 16 16"
@@ -167,9 +167,9 @@ export default function HomeProjectTemplateExpanded(props) {
           >
             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-          </motion.svg>
-        </motion.div>
-      </motion.div>
+          </m.svg>
+        </m.div>
+      </m.div>
     </>
   );
 }

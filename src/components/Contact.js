@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function Contact() {
   const contactVariants = {
@@ -21,7 +21,7 @@ export default function Contact() {
   };
 
   return (
-    <motion.div
+    <m.div
       variants={contactVariants}
       initial="initial"
       animate="animate"
@@ -98,6 +98,6 @@ export default function Contact() {
           </li>
         </ul>
       </section>
-    </motion.div>
+    </m.div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 export default function SkillFramerMotion(props) {
   const icon = {
@@ -35,7 +35,7 @@ export default function SkillFramerMotion(props) {
               }}
             >
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-                <motion.path
+                <m.path
                   d="M0 100V0l50 50 50-50v100L75 75l-25 25-25-25z"
                   variants={icon}
                   animate={animationOut ? "hidden" : "visible"}
@@ -70,7 +70,7 @@ export default function SkillFramerMotion(props) {
             }}
           >
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-              <motion.path
+              <m.path
                 d="M0 100V0l50 50 50-50v100L75 75l-25 25-25-25z"
                 variants={icon}
                 animate={animationOut ? "hidden" : "visible"}

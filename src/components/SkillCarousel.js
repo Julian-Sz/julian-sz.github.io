@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import useWindowSize from "../Hooks/useWindowSize";
 import SkillFramerMotion from "./SkillCarousel/SkillFramerMotion";
 import SkillTemplate from "./SkillCarousel/SkillTemplate";
@@ -58,7 +58,7 @@ export default function SkillCarousel() {
     const framerMotionObj = {
       title: "Framer Motion",
       details:
-        "Framer motion is a powerful animation library that works hand-in-hand with react. It powers this carousel and many other things on this website.",
+        "Framer m is a powerful animation library that works hand-in-hand with react. It powers this carousel and many other things on this website.",
       background: "#B53471",
     };
 
@@ -144,7 +144,7 @@ export default function SkillCarousel() {
         return {
           position: 0,
           element: (
-            <motion.div
+            <m.div
               variants={PositionVariants}
               initial="initialLeft"
               animate="firstPosition"
@@ -161,14 +161,14 @@ export default function SkillCarousel() {
               <div className="card flex flex-col justify-center">
                 {skillList[index]}
               </div>
-            </motion.div>
+            </m.div>
           ),
         };
       } else if (index === displayed) {
         return {
           position: 1,
           element: (
-            <motion.div
+            <m.div
               variants={PositionVariants}
               animate="secondPosition"
               whileHover="hoverMiddle"
@@ -180,7 +180,7 @@ export default function SkillCarousel() {
               <div className="card flex flex-col justify-center">
                 {skillList[index]}
               </div>
-            </motion.div>
+            </m.div>
           ),
         };
       } else if (
@@ -190,7 +190,7 @@ export default function SkillCarousel() {
         return {
           position: 2,
           element: (
-            <motion.div
+            <m.div
               variants={PositionVariants}
               initial="initialRight"
               animate="thirdPosition"
@@ -207,7 +207,7 @@ export default function SkillCarousel() {
               <div className="card flex flex-col justify-center">
                 {skillList[index]}
               </div>
-            </motion.div>
+            </m.div>
           ),
         };
       } else {
