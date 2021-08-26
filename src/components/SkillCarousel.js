@@ -165,7 +165,6 @@ export default function SkillCarousel() {
           ),
         };
       } else if (index === displayed) {
-        console.log("rerendered!");
         return {
           position: 1,
           element: (

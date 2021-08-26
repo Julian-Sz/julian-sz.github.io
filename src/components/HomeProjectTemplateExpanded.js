@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import useWindowSize from "../Hooks/useWindowSize.js";
 
 export default function HomeProjectTemplateExpanded(props) {
   const detailsVariants = {
@@ -37,6 +38,8 @@ export default function HomeProjectTemplateExpanded(props) {
       backgroundColor: "rgba(0, 0, 0, 0)",
     },
   };
+
+  const { width } = useWindowSize();
   return (
     <>
       <motion.div
@@ -53,29 +56,36 @@ export default function HomeProjectTemplateExpanded(props) {
         <motion.div
           style={{
             width: "80vw",
-            height: "50vh",
+            maxWidth: "1600px",
+            height: width < 768 ? "80vh" : "50vh",
           }}
           onClick={(e) => {
             e.stopPropagation();
           }}
           layoutId={`Container${props.projectobj.title}`}
-          className="flex flex-col md:flex-row overflow-hidden items-center relative"
+          className="flex flex-col md:flex-row overflow-hidden justify-end relative bg-blue-500"
           variants={containerVariants}
           initial="initial"
           animate="animate"
         >
           <motion.div
-            layoutId={`Background${props.projectobj.title}`}
-            style={{ background: props.projectobj.background }}
-            className="flex-1 h-3/6 w-full md:w-6/12 md:h-full z-40"
-          ></motion.div>
-          <motion.div
-            layoutId={`RightContainerBackground${props.projectobj.title}`}
-            className="absolute h-3/6 md:h-full w-full md:w-6/12 right-0 md:top-0 bottom-0 bg-gray-400"
-          ></motion.div>
+            layoutId={`BackgroundContainer${props.projectobj.title}`}
+            className="absolute left-0 top-0 flex-1 w-full h-3/6 md:w-6/12 md:h-full z-40 overflow-hidden"
+          >
+            <motion.div
+              layoutId={`BackgroundInnerContainer${props.projectobj.title}`}
+              className="absolute -right-full -left-full top-0 bottom-0"
+            >
+              <motion.img
+                layoutId={`BackgroundImage${props.projectobj.title}`}
+                src={props.projectobj.background}
+                className="h-full mx-auto"
+              ></motion.img>
+            </motion.div>
+          </motion.div>
           <motion.div
             layoutId={`RightContainer${props.projectobj.title}`}
-            className="flex-1 flex flex-col justify-center z-50 h-3/6 md:h-full items-center"
+            className="flex flex-col md:w-6/12 justify-center z-50 h-3/6 md:h-full items-center px-2 md:px-0"
           >
             <motion.h1
               layoutId={`Title${props.projectobj.title}`}

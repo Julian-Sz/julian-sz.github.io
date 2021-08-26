@@ -16,24 +16,15 @@ export default function HomeProjectTemplate(props) {
     zIndex = 40;
   }
 
-  const detailsVariants = {
-    initial: {
-      opacity: 1,
-    },
-    animate: {
-      opacity: 0,
-    },
-  };
   return (
     <motion.div
-      className="w-full h-56 flex flex-col justify-center items-center relative overflow-hidden"
+      className="w-full h-64 flex flex-col justify-center items-center relative overflow-hidden bg-blue-500 cursor-pointer"
       style={{ zIndex: zIndex }}
       onClick={() => {
         props.setexpanded(props.index);
       }}
       onLayoutAnimationComplete={() => {
         if (props.isanimatingout) {
-          console.log("animation completed");
           props.setanimatingout(false);
         }
       }}
@@ -43,13 +34,23 @@ export default function HomeProjectTemplate(props) {
       animate="animate"
     >
       <motion.div
-        layoutId={`Background${props.projectobj.title}`}
-        style={{ background: props.projectobj.background }}
-        className="absolute left-0 right-0 top-0 bottom-0 z-20"
-      ></motion.div>
+        layoutId={`BackgroundContainer${props.projectobj.title}`}
+        className="absolute left-0 right-0 bottom-0 h-full z-20 overflow-hidden"
+      >
+        <motion.div
+          layoutId={`BackgroundInnerContainer${props.projectobj.title}`}
+          className="absolute -right-full -left-full top-0 bottom-0"
+        >
+          <motion.img
+            layoutId={`BackgroundImage${props.projectobj.title}`}
+            src={props.projectobj.background}
+            className="h-full mx-auto"
+          ></motion.img>
+        </motion.div>
+      </motion.div>
       <motion.div
         layoutId={`RightContainer${props.projectobj.title}`}
-        className="relative flex flex-col items-center z-30"
+        className="relative flex flex-col items-center z-40 p-5"
       >
         <motion.h1
           layoutId={`Title${props.projectobj.title}`}
@@ -64,10 +65,10 @@ export default function HomeProjectTemplate(props) {
           {props.projectobj.description}
         </motion.p>
       </motion.div>
-      <motion.div
-        layoutId={`RightContainerBackground${props.projectobj.title}`}
-        className="w-full h-full bg-gray-400 absolute flex flex-col justify-center"
-      ></motion.div>
+      <div
+        style={{ background: "rgba(0,0,0,0.5)" }}
+        className="w-full h-full absolute top-0 left-0 z-30"
+      ></div>
     </motion.div>
   );
 }

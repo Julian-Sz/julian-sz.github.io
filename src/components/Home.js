@@ -7,22 +7,22 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   useEffect(() => {
-    let triangleContainer =
+    const triangleContainer =
       document.getElementsByClassName("triangleContainer")[0];
-    let homeContainer = document.getElementById("Home");
+    const homeContainer = document.getElementById("Home");
     const resizeFunction = () => {
       setTimeout(() => {
-        let width = triangleContainer.clientWidth / 2;
-        let triangleHeight = parseInt(
+        const width = triangleContainer.clientWidth / 2;
+        const triangleHeight = parseInt(
           getComputedStyle(triangleContainer).getPropertyValue(
             "--triangle-height"
           )
         );
-        let angle = Math.asin(triangleHeight / width);
-        let angleVal = String(angle) + "rad";
+        const angle = Math.asin(triangleHeight / width);
+        const angleVal = String(angle) + "rad";
         homeContainer.style.setProperty("--rotate-left", angleVal);
 
-        let hypotenuse =
+        const hypotenuse =
           String(Math.sqrt(width ** 2 + triangleHeight ** 2)) + "px";
         homeContainer.style.setProperty("--triangle-hypotenuse", hypotenuse);
       }, 100);
@@ -35,7 +35,7 @@ export default function Home() {
   }, []);
 
   useEffect(() => {
-    let event = new Event("resize");
+    const event = new Event("resize");
     window.dispatchEvent(event);
   });
 
