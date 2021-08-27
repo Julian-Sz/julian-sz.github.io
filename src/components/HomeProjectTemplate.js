@@ -1,5 +1,6 @@
 import React from "react";
 import { m } from "framer-motion";
+import LazyLoad from "react-lazyload";
 
 export default function HomeProjectTemplate(props) {
   const containerVariants = {
@@ -45,12 +46,14 @@ export default function HomeProjectTemplate(props) {
           layoutId={`BackgroundInnerContainer${props.projectobj.title}`}
           className="absolute -right-full -left-full top-0 bottom-0"
         >
-          <m.img
-            layoutId={`BackgroundImage${props.projectobj.title}`}
-            src={props.projectobj.background}
-            className="h-full mx-auto"
-            alt=""
-          ></m.img>
+          <LazyLoad className="h-full mx-auto">
+            <m.img
+              layoutId={`BackgroundImage${props.projectobj.title}`}
+              src={props.projectobj.background}
+              className="h-full mx-auto"
+              alt=""
+            ></m.img>
+          </LazyLoad>
         </m.div>
       </m.div>
       <m.div
