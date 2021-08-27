@@ -15,18 +15,18 @@ export default function HomeProjects() {
   const projectObjArray = [
     {
       title: "Unreal ice cream shop",
-      description: "Order an unreal ice cream!",
+      description: "Multi-page website",
       details:
-        "I've created this project to train my skills of React-Router, React and Framer Motion. It contains multiple,  cross-animated pages which simulate an ordering process.",
+        "I've created this project to train my skills of React-Router, React and Framer Motion. It contains multiple, cross-animated pages which simulate an ordering process.",
       background: IceCreamImg,
       link: "https://julian-sz.github.io/Ice-Cream-Shop/#/",
       codelink: "https://github.com/Julian-Sz/Ice-Cream-Shop",
     },
     {
       title: "Drum Machine",
-      description: "Play the drums in your browser!",
+      description: "Web App",
       details:
-        "This project is part of the FreeCodeCamp.org curriculum. It uses React and Framer Motion. You can play the drums on the screen or on the keyboard",
+        "This project is part of the FreeCodeCamp.org curriculum. It uses React and Framer Motion. You can play the drums on the screen or the keyboard.",
       background: DrumMachineImg,
       link: "https://julian-sz.github.io/FCC-Drum-Machine/",
       codelink: "https://github.com/Julian-Sz/FCC-Drum-Machine",
@@ -34,7 +34,7 @@ export default function HomeProjects() {
 
     {
       title: "Pomodoro Clock",
-      description: "It's like a timer, but different!",
+      description: "Web App",
       details:
         "This project is part of the FreeCodeCamp.org curriculum. It has alternating timers, and you can set those individually. Powered by React.",
       background: PomodoroClockImg,
@@ -43,25 +43,25 @@ export default function HomeProjects() {
     },
     {
       title: "Calculator",
-      description: "It has point before line calculation!",
+      description: "Web App",
       details:
-        "This project is part of the FreeCodeCamp.org curriculum. It uses Bootstrap and React.",
+        "This project is part of the FreeCodeCamp.org curriculum. It uses Bootstrap and React. The calculator follows point before line rules.",
       background: CalculatorImg,
       link: "https://julian-sz.github.io/FCC-Calculator/",
       codelink: "https://github.com/Julian-Sz/FCC-Calculator",
     },
     {
       title: "Random quote machine",
-      description: "Get random quotes!",
+      description: "Web App",
       details:
-        "This project is part of the FreeCodeCamp.org curriculum. It uses React, Redux and Bootstrap.",
+        "This project is part of the FreeCodeCamp.org curriculum. It uses React, Redux and Bootstrap. You can click the button and get random quotes.",
       background: QuoteMachineImg,
       link: "https://codepen.io/julian-sz/full/oNZwGRG",
       codelink: "https://codepen.io/julian-sz/pen/oNZwGRG",
     },
     {
       title: "Markdown Previewer",
-      description: "View Markdown in the browser!",
+      description: "Web App",
       details:
         "This project is part of the FreeCodeCamp.org curriculum. Markdown is a simple markup language, and you can format text with it using a plain-text editor. On this website, you can preview the Markdown and check how it looks like.",
       background: MarkdownViewerImg,
@@ -70,7 +70,7 @@ export default function HomeProjects() {
     },
     {
       title: "Bootstrap Testwebsite",
-      description: "",
+      description: "Static website",
       details: "Just for learning Bootstrap.",
       background: BootstrapTestImg,
       link: "https://julian-sz.github.io/Bootstrap-Test/",
@@ -78,9 +78,9 @@ export default function HomeProjects() {
     },
     {
       title: "Interesting stuff in Python",
-      description: "One of my first websites",
+      description: "Static website",
       details:
-        "It's one of my first websites, and I've learned a lot about Python while creating it.",
+        "This is one of my first websites, and I've learned a lot about Python while creating it. It uses HTML and CSS only.",
       background: PythonStuffImg,
       link: "https://codepen.io/julian-sz/full/bGgXZxM",
       codelink: "https://codepen.io/julian-sz/pen/bGgXZxM",
