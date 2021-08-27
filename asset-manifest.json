@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5350402b.chunk.css",
+    "main.js": "/static/js/main.2fab1f23.chunk.js",
+    "main.js.map": "/static/js/main.2fab1f23.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b91cd5ab.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b91cd5ab.js.map",
+    "static/js/2.5ae969d0.chunk.js": "/static/js/2.5ae969d0.chunk.js",
+    "static/js/2.5ae969d0.chunk.js.map": "/static/js/2.5ae969d0.chunk.js.map",
+    "static/js/3.eaf2cb2e.chunk.js": "/static/js/3.eaf2cb2e.chunk.js",
+    "static/js/3.eaf2cb2e.chunk.js.map": "/static/js/3.eaf2cb2e.chunk.js.map",
+    "static/js/4.122064b5.chunk.js": "/static/js/4.122064b5.chunk.js",
+    "static/js/4.122064b5.chunk.js.map": "/static/js/4.122064b5.chunk.js.map",
+    "static/js/5.7d38cc1f.chunk.js": "/static/js/5.7d38cc1f.chunk.js",
+    "static/js/5.7d38cc1f.chunk.js.map": "/static/js/5.7d38cc1f.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.5350402b.chunk.css.map": "/static/css/main.5350402b.chunk.css.map",
+    "static/js/2.5ae969d0.chunk.js.LICENSE.txt": "/static/js/2.5ae969d0.chunk.js.LICENSE.txt",
+    "static/media/bgStars.922b4b90.jpg": "/static/media/bgStars.922b4b90.jpg",
+    "static/media/bootstrap-logo.b91717f3.svg": "/static/media/bootstrap-logo.b91717f3.svg",
+    "static/media/bootstrap-test.d45d1d52.png": "/static/media/bootstrap-test.d45d1d52.png",
+    "static/media/calculator.4182da2e.png": "/static/media/calculator.4182da2e.png",
+    "static/media/drum-machine.94a1a43b.png": "/static/media/drum-machine.94a1a43b.png",
+    "static/media/earth-compressed.898ed588.jpg": "/static/media/earth-compressed.898ed588.jpg",
+    "static/media/ice-cream-shop.a812993e.png": "/static/media/ice-cream-shop.a812993e.png",
+    "static/media/markdown-viewer.54907a05.png": "/static/media/markdown-viewer.54907a05.png",
+    "static/media/moon.4cd5b999.jpg": "/static/media/moon.4cd5b999.jpg",
+    "static/media/pomodoro-clock.b0425e60.png": "/static/media/pomodoro-clock.b0425e60.png",
+    "static/media/python-stuff.a38f7e84.png": "/static/media/python-stuff.a38f7e84.png",
+    "static/media/random-quote-machine.044d666a.png": "/static/media/random-quote-machine.044d666a.png",
+    "static/media/sun.4b569137.jpg": "/static/media/sun.4b569137.jpg",
+    "static/media/tailwind-logo.cb8046c1.svg": "/static/media/tailwind-logo.cb8046c1.svg",
+    "static/media/three-logo.1f165e73.svg": "/static/media/three-logo.1f165e73.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b91cd5ab.js",
+    "static/js/2.5ae969d0.chunk.js",
+    "static/css/main.5350402b.chunk.css",
+    "static/js/main.2fab1f23.chunk.js"
+  ]
+}
