@@ -98,20 +98,18 @@ export default function HomeProjects() {
         id="projectsGrid"
         className="grid grid-cols-1 md:grid-cols-3 gap-10 mx-auto"
       >
-        <AnimateSharedLayout type="crossfade">
+        <AnimateSharedLayout type="switch">
           {projectObjArray.map((el, index) => {
             return (
               <div key={el.title}>
-                {index !== expanded && (
-                  <HomeProjectTemplate
-                    projectobj={el}
-                    key={el.title}
-                    index={index}
-                    setexpanded={setExpanded}
-                    isanimatingout={isAnimatingOut === index}
-                    setanimatingout={setAnimatingOut}
-                  />
-                )}
+                <HomeProjectTemplate
+                  projectobj={el}
+                  key={el.title}
+                  index={index}
+                  setexpanded={setExpanded}
+                  isanimatingout={isAnimatingOut === index}
+                  setanimatingout={setAnimatingOut}
+                />
                 <AnimatePresence>
                   {index === expanded && (
                     <HomeProjectTemplateExpanded

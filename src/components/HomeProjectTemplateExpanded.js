@@ -65,7 +65,7 @@ export default function HomeProjectTemplateExpanded(props) {
             e.stopPropagation();
           }}
           layoutId={`Container${props.projectobj.title}`}
-          className="overflow-hidden relative"
+          className="overflow-hidden relative rounded-2xl"
           variants={containerVariants}
           initial="initial"
           animate="animate"
