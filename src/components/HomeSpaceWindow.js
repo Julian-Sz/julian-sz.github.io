@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import * as THREE from "three";
+import { MathUtils } from "three";
 import { Canvas } from "@react-three/fiber";
 // import { OrbitControls } from "@react-three/drei";
 import SpaceWindowCamera from "./SpaceWindowCamera";
@@ -27,7 +27,7 @@ export default function HomeSpaceWindow() {
   for (let i = 0; i < starAmount; i++) {
     const [x, y, z] = Array(3)
       .fill()
-      .map(() => THREE.MathUtils.randFloatSpread(200));
+      .map(() => MathUtils.randFloatSpread(200));
     if (
       Math.abs(x) < starForbiddenZone &&
       Math.abs(y) < starForbiddenZone &&
@@ -43,7 +43,6 @@ export default function HomeSpaceWindow() {
     <div className="h-full w-full">
       <Canvas
         resize={{ scroll: false }} // quick fix for scroll issue
-        shadows
         colorManagement
       >
         <SpaceWindowCamera />

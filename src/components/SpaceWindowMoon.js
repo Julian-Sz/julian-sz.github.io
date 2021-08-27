@@ -4,9 +4,7 @@ import { useLoader, useFrame } from "@react-three/fiber";
 import moonJPG from "../textures/moon.jpg";
 
 export default function SpaceWindowMoon(props) {
-  const meshWrapper1 = useRef(null);
   const meshWrapper2 = useRef(null);
-  const meshInside = useRef(null);
 
   useFrame(() => {
     meshWrapper2.current.rotation.y += 0.002;
@@ -14,13 +12,9 @@ export default function SpaceWindowMoon(props) {
 
   const textureMoon = useLoader(TextureLoader, moonJPG);
   return (
-    <mesh
-      position={[0, 0, 0]}
-      rotation={[0, -Math.PI / 4, 0.1]}
-      ref={meshWrapper1}
-    >
+    <mesh position={[0, 0, 0]} rotation={[0, -Math.PI / 4, 0.1]}>
       <mesh position={[0, 0, 0]} ref={meshWrapper2}>
-        <mesh position={[40, 0, 0]} ref={meshInside}>
+        <mesh position={[40, 0, 0]}>
           <sphereBufferGeometry
             attach="geometry"
             args={[props.radius, 10, 10]}

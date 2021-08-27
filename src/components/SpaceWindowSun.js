@@ -14,7 +14,7 @@ export default function SpaceWindowSun(props) {
 
   return (
     <mesh position={props.position} ref={mesh}>
-      <sphereBufferGeometry attach="geometry" args={[props.radius, 15, 15]} />
+      <sphereBufferGeometry attach="geometry" args={[props.radius, 12, 13]} />
       <meshBasicMaterial map={textureSun} attach="material" />
       <pointLight
         color={0xfff6db}

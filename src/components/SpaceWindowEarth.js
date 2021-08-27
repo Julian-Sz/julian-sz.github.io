@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { TextureLoader } from "three/src/loaders/TextureLoader.js";
 import { useLoader, useFrame } from "@react-three/fiber";
-import earthJPG from "../textures/earth.jpg";
+import earthJPG from "../textures/earth-compressed.jpg";
 
 export default function SpaceWindowEarth(props) {
   const mesh = useRef(null);

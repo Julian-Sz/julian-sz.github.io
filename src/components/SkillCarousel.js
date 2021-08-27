@@ -155,7 +155,7 @@ export default function SkillCarousel() {
               }}
               layout
               key={index}
-              className="cardWrapper flex justify-center absolute -right-8 md:-right-4 lg:right-5"
+              className="cardWrapper flex justify-center absolute -right-8 md:-right-4 lg:right-5 cursor-pointer"
               style={{ gridArea: "A0" }}
             >
               <div className="card flex flex-col justify-center">
@@ -201,7 +201,7 @@ export default function SkillCarousel() {
               }}
               key={index}
               layout
-              className="cardWrapper flex justify-center absolute -left-8 md:-left-4 lg:left-5"
+              className="cardWrapper flex justify-center absolute -left-8 md:-left-4 lg:left-5 cursor-pointer"
               style={{ gridArea: "A2" }}
             >
               <div className="card flex flex-col justify-center">

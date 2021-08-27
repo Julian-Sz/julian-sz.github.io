@@ -49,6 +49,7 @@ export default function HomeProjectTemplate(props) {
             layoutId={`BackgroundImage${props.projectobj.title}`}
             src={props.projectobj.background}
             className="h-full mx-auto"
+            alt=""
           ></m.img>
         </m.div>
       </m.div>
