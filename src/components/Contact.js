@@ -1,4 +1,3 @@
-import React from "react";
 import { m } from "framer-motion";
 
 export default function Contact() {

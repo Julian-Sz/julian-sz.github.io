@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import HomeSpaceWindow from "./HomeSpaceWindow";
 import SkillCarousel from "./SkillCarousel";
 import HomeProjects from "./HomeProjects";

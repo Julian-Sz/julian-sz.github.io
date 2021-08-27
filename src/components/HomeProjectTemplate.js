@@ -1,4 +1,3 @@
-import React from "react";
 import { m } from "framer-motion";
 import LazyLoad from "react-lazyload";
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import HomeProjectTemplate from "./HomeProjectTemplate";
 import HomeProjectTemplateExpanded from "./HomeProjectTemplateExpanded";
 import { AnimateSharedLayout, AnimatePresence } from "framer-motion";

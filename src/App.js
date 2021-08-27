@@ -1,4 +1,3 @@
-import React from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
 import Home from "./components/Home.js";
 import Nav from "./components/Nav.js";

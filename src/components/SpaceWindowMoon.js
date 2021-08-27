@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { TextureLoader } from "three/src/loaders/TextureLoader.js";
 import { useLoader, useFrame } from "@react-three/fiber";
 import moonJPG from "../textures/moon.jpg";

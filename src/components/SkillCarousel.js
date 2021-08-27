@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { m, AnimatePresence } from "framer-motion";
 import useWindowSize from "../Hooks/useWindowSize";
 import SkillFramerMotion from "./SkillCarousel/SkillFramerMotion";

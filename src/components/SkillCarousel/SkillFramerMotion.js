@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { m } from "framer-motion";
 
 export default function SkillFramerMotion(props) {
