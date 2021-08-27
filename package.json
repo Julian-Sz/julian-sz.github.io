@@ -2,6 +2,7 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://julian-sz.github.io/Ice-Cream-Shop/",
   "dependencies": {
     "@craco/craco": "^6.2.0",
     "@react-three/fiber": "^7.0.6",
@@ -21,7 +22,9 @@
     "start": "craco start",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
