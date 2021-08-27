@@ -10,7 +10,6 @@ import threeLogo from "./SkillCarousel/Images/three-logo.svg";
 import reactLogo from "./SkillCarousel/Images/logo512.png";
 
 export default function SkillCarousel() {
-  // const borderRadius = 50;
   const width = useWindowSize().width;
 
   const mobile = width < 768 ? true : false;
@@ -18,8 +17,9 @@ export default function SkillCarousel() {
   const skillList = useMemo(() => {
     const reactRouterObj = {
       logo: reactRouterLogo,
-      title: "React Router",
-      details: "Add details here",
+      title: "React-Router",
+      details:
+        "Normally, you would have separate pages with links. With react-router, you can create multi-page websites without reload. And you can even animate the transitions!",
       background: "#EA2027",
     };
 
