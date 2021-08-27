@@ -58,7 +58,7 @@ export default function SkillCarousel() {
     const framerMotionObj = {
       title: "Framer Motion",
       details:
-        "Framer m is a powerful animation library that works hand-in-hand with react. It powers this carousel and many other things on this website.",
+        "Framer Motion is a powerful animation library that works hand-in-hand with react. It powers this carousel and many other things on this website.",
       background: "#B53471",
     };
 
