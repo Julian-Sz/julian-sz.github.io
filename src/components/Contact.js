@@ -25,7 +25,8 @@ export default function Contact() {
       initial="initial"
       animate="animate"
       exit="exit"
-      className="flex flex-col pt-32 px-5 text-white text-center"
+      className="flex flex-col mt-32 mb-5 p-8 md:p-20 text-white text-center w-min m-auto rounded-2xl glow"
+      style={{}}
     >
       <div className="flex items-center justify-center">
         <svg

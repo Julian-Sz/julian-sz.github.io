@@ -3,11 +3,12 @@ import { m, AnimatePresence } from "framer-motion";
 import useWindowSize from "../Hooks/useWindowSize";
 import SkillFramerMotion from "./SkillCarousel/SkillFramerMotion";
 import SkillTemplate from "./SkillCarousel/SkillTemplate";
-import reactRouterLogo from "./SkillCarousel/Images/react-router-logo.png";
 import bootstrapLogo from "./SkillCarousel/Images/bootstrap-logo.svg";
 import tailwindLogo from "./SkillCarousel/Images/tailwind-logo.svg";
 import threeLogo from "./SkillCarousel/Images/three-logo.svg";
 import reactLogo from "./SkillCarousel/Images/logo512.png";
+import expressLogo from "./SkillCarousel/Images/express-logo.png";
+import mongooseLogo from "./SkillCarousel/Images/mongoose-logo.png";
 
 export default function SkillCarousel() {
   const width = useWindowSize().width;
@@ -15,14 +16,6 @@ export default function SkillCarousel() {
   const mobile = width < 768 ? true : false;
 
   const skillList = useMemo(() => {
-    const reactRouterObj = {
-      logo: reactRouterLogo,
-      title: "React-Router",
-      details:
-        "Normally, you would have separate pages with links. With react-router, you can create multi-page websites without reload. And you can even animate the transitions!",
-      background: "#EA2027",
-    };
-
     const bootstrapObj = {
       logo: bootstrapLogo,
       title: "Bootstrap",
@@ -35,7 +28,7 @@ export default function SkillCarousel() {
       logo: tailwindLogo,
       title: "Tailwind CSS",
       details:
-        "Tailwind CSS is a utility-based library. Instead of writing normal CSS,        Tailwind has pre-defined classes for nearly every CSS property.",
+        "Tailwind CSS is a utility-based library. Instead of writing normal CSS, Tailwind has pre-defined classes for nearly every CSS property.",
       background: "#009432",
     };
 
@@ -43,7 +36,7 @@ export default function SkillCarousel() {
       logo: threeLogo,
       title: "Three.js",
       details:
-        "With Three.js, you can make 3D animations in the webbrowser.        React-three-fiber makes it possible to use this superpower with React. Just look at that 3D-animation up there!",
+        "With Three.js, you can make 3D animations in the webbrowser. React-three-fiber makes it possible to use this superpower with React. Just look at that 3D-animation up there!",
       background: "#0652DD",
     };
 
@@ -62,13 +55,28 @@ export default function SkillCarousel() {
       background: "#B53471",
     };
 
+    const mongooseObj = {
+      logo: mongooseLogo,
+      title: "Mongoose",
+      details:
+        "With Mongoose, you can connect to MongoDB. It works well with Express.",
+      background: "#EA2027",
+    };
+
+    const expressObj = {
+      logo: expressLogo,
+      title: "Express",
+      details: "Express allows you to create backend servers the fast way.",
+      background: "#B53471",
+    };
     return [
       <SkillTemplate skillobj={reactObj} mobile={mobile} />,
       <SkillTemplate skillobj={bootstrapObj} mobile={mobile} />,
       <SkillTemplate skillobj={tailwindObj} mobile={mobile} />,
       <SkillFramerMotion skillobj={framerMotionObj} mobile={mobile} />,
       <SkillTemplate skillobj={threeObj} mobile={mobile} />,
-      <SkillTemplate skillobj={reactRouterObj} mobile={mobile} />,
+      <SkillTemplate skillobj={mongooseObj} mobile={mobile} />,
+      <SkillTemplate skillobj={expressObj} mobile={mobile} />,
     ];
   }, [mobile]);
 

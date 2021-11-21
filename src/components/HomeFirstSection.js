@@ -10,7 +10,7 @@ export default function HomeFirstSection() {
           <p className="px-3 md:text-2xl">
             Currently, I am attending HTL Waidhofen in the department of
             mechanical engineering. In my free time, I am learning to code and
-            to design websites and web apps, like this one.
+            designing websites and web apps, like this one.
           </p>
         </div>
         <div

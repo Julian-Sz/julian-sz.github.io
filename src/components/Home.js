@@ -136,13 +136,16 @@ export default function Home() {
         </div>
       </section>
       <section id="homeSkillSection" className="p-5">
-        <h1 className="text-6xl my-5 md:text-left md:ml-10 pb-10">My Skills</h1>
+        <h1 className="text-6xl my-5 md:text-left md:ml-10 pb-10">
+          My Coding Skills
+        </h1>
         <div className="carousel grid relative">
           <SkillCarousel />
         </div>
       </section>
       <section id="homeProjectsSection" className="p-5">
         <HomeProjects />
+        <h1 className="text-2xl m-10">More projects coming soon!</h1>
       </section>
     </m.main>
   );

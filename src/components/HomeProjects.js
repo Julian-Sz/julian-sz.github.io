@@ -8,6 +8,7 @@ import PomodoroClockImg from "./HomeProjectsImages/pomodoro-clock.png";
 import CalculatorImg from "./HomeProjectsImages/calculator.png";
 import QuoteMachineImg from "./HomeProjectsImages/random-quote-machine.png";
 import MarkdownViewerImg from "./HomeProjectsImages/markdown-viewer.png";
+import UrlShortenerImg from "./HomeProjectsImages/url-shortener.png";
 import BootstrapTestImg from "./HomeProjectsImages/bootstrap-test.png";
 import PythonStuffImg from "./HomeProjectsImages/python-stuff.png";
 
@@ -67,6 +68,16 @@ export default function HomeProjects() {
       background: MarkdownViewerImg,
       link: "https://codepen.io/julian-sz/full/poedvwE",
       codelink: "https://codepen.io/julian-sz/pen/poedvwE",
+    },
+    {
+      title: "URL Shortener",
+      description: "Microservice / API",
+      details:
+        "This is an Express app on replit.com. You can shorten your URLs, just like with a regular URL shortner. To get started, fire up the replit server.",
+      background: UrlShortenerImg,
+      link: "",
+      codelink:
+        "https://replit.com/@JulianSzigethy/FCC-Backend-URL-Shortener-Microservice",
     },
     {
       title: "Bootstrap Testwebsite",

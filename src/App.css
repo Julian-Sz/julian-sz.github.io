@@ -10,6 +10,7 @@ body {
 body {
   background: #222f3e;
   position: relative;
+  min-height: 100vh;
 }
 
 #navHeader {
@@ -376,4 +377,19 @@ body {
 
 .closedProjectCard * {
   will-change: transform;
+}
+
+/* Contact page */
+
+.glow {
+  background: #111;
+  border: 0.2rem solid #fff;
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #ff5403,
+    0 0 0.8rem #ff5403, 0 0 2.8rem #ff5403, inset 0 0 1.3rem #ff5403;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.glow:hover {
+  box-shadow: 0 0 0.2rem #fff, 0 0 0.2rem #fff, 0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 0 0 2.8rem #bc13fe, inset 0 0 1.3rem #bc13fe;
 }
